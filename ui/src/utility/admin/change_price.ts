@@ -8,8 +8,8 @@ export const changePrice = (packageId: string, listHeroId: string, newPriceInSui
     tx.moveCall({
       target:`${packageId}::marketplace::change_the_price`,
       arguments:[
-        tx.object(listHeroId),
         tx.object(adminCapId),
+        tx.object(listHeroId),
         tx.pure.u64(newPriceInMist)
       ]
     });
